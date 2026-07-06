@@ -4669,7 +4669,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -18339,6 +18339,10 @@ PrefabInstance:
     - target: {fileID: 4366270324574252013, guid: 79f781c431b19e241a663cb30875a981, type: 3}
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493218564164422962, guid: 79f781c431b19e241a663cb30875a981, type: 3}
+      propertyPath: _aimSmoothing
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8669617849655474249, guid: 79f781c431b19e241a663cb30875a981, type: 3}
       propertyPath: m_Name
