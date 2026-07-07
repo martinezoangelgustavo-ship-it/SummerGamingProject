@@ -77,6 +77,14 @@ public class WeaponController : MonoBehaviour
         IsFiring = wantsFire && fireTimer > -0.1f && !isReloading;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Collectible") currentAmmo += 10;
+        Debug.Log("Picked Collectible");
+        Destroy(other.gameObject);
+
+    }
+
     void Fire()
     {
         float interval = 1f / CurrentWeapon.fireRate;
@@ -139,7 +147,7 @@ public class WeaponController : MonoBehaviour
     void HandleReload()
     {
         if (input.ReloadPressed && !isReloading && currentAmmo < CurrentWeapon.magazineSize)
-            StartCoroutine(ReloadRoutine());
+         StartCoroutine(ReloadRoutine());
     }
 
     IEnumerator ReloadRoutine()

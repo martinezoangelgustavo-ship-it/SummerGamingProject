@@ -78,8 +78,6 @@ public class PlayerController : MonoBehaviour
         Vector2 rawInput = _input.Move;
         Vector3 inputDir = new Vector3(rawInput.x, 0f, rawInput.y);
 
-        MoveDirection = inputDir;
-
         if (_mainCam != null)
         {
             Vector3 camForward = _mainCam.transform.forward;
@@ -93,6 +91,8 @@ public class PlayerController : MonoBehaviour
 
             inputDir = camRight * rawInput.x + camForward * rawInput.y;
         }
+
+        MoveDirection = inputDir;
 
         float currentSpeed = _moveSpeed;
         if (_input.Sprint) currentSpeed = _runSpeed;
