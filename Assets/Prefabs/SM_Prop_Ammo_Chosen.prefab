@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 23935260949339240}
   - component: {fileID: 95740730484326404}
   - component: {fileID: 64727921590618428}
+  - component: {fileID: 4015790603946929575}
   m_Layer: 0
   m_Name: SM_Prop_Ammo_Chosen
   m_TagString: Collectible
@@ -219,3 +220,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43217579353184496, guid: 83f2bf61ab1720e449d2c9c482a0795e, type: 2}
+--- !u!114 &4015790603946929575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272480267893180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc082ddb1efa3e5448f358d57ebb793b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  amount: 30
+  weaponToGive: {fileID: 11400000, guid: c7e31a25118721f459b79175301d388f, type: 2}
+  bobHeight: 0.3
+  bobSpeed: 2
+  rotateSpeed: 90
+  pickupEffectPrefab: {fileID: 0}
+  pickupSound: {fileID: 0}
+  destroyOnPickup: 1
+  playerTag: Player

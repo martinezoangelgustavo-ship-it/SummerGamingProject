@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 326512662b9ef6f49a48cbe0e6dc0092, type: 3}
-  m_Name: ZombieFast
+  m_Name: ZombieBoss
   m_EditorClassIdentifier: 
   enemyName: Zombie
-  maxHealth: 10
-  moveSpeed: 5
-  damage: 5
+  maxHealth: 2000
+  moveSpeed: 3.5
+  damage: 100
   detectionRange: 20
   attackRange: 2
-  attackCooldown: 1.5
+  attackCooldown: 4
   stoppingDistance: 1.5
-  attackWindup: 0.3
-  lootDropChance: 1
-  scoreValue: 10
+  attackWindup: 1.5
+  lootDropChance: 0.2
+  scoreValue: 100
   explodesOnDeath: 0
   explosionRadius: 3
   explosionDamage: 25

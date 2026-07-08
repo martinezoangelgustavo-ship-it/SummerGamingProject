@@ -15,6 +15,8 @@ MonoBehaviour:
   weaponName: Rifle
   icon: {fileID: 0}
   weaponModel: {fileID: 1900586067242068, guid: ad49a19d2c4adc94b838606a5d459f85, type: 3}
+  bulletQuantity: 1
+  MultipleBulletSpread: 1
   damage: 40
   fireRate: 5
   spread: 15
@@ -30,6 +32,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
   emptyClickSound: {fileID: 0}
-  cameraShakeIntensity: 0.3
+  cameraShakeIntensity: 2
   movementPenalty: 0.6
   knockbackForce: 5
