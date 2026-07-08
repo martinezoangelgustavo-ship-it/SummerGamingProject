@@ -29,6 +29,9 @@ public class WeaponController : MonoBehaviour
     public UnityEvent OnReloadStart;
     public UnityEvent OnReloadEnd;
 
+    [SerializeField] private int _numBullets = 5;
+    [SerializeField] private int _spreadDegree = 10;
+
     int currentWeaponIndex;
     int currentAmmo;
     float fireTimer;
@@ -91,6 +94,25 @@ public class WeaponController : MonoBehaviour
         currentAmmo--;
 
         Vector3 direction = muzzlePoint.forward;
+
+        /*if (bulletQuantity > 1)
+        {
+            
+        }*/
+
+        /*if (bulletPool != null)
+        {
+            for (int i = 0; i < bulletObjs.Lenght; i++)
+            {
+                Vector3 spreadRotation = Quaternion.Euler(0f, -(_numBullets * _spreadDegree / 2) + (_spreadDegree * i), 0f) * direction;
+                Quaternion quatRotation = Quaternion.LookRotation(spreadRotation);
+
+                bulletObjs[i] = bulletPool.Get(muzzlePoint.position, quatRotation);
+            }
+        }
+
+        if*/
+
         if (CurrentWeapon.spread > 0f)
         {
             float spreadAngle = CurrentWeapon.spread * 0.5f;
@@ -134,7 +156,10 @@ public class WeaponController : MonoBehaviour
             AudioManager.Instance?.PlaySFX(CurrentWeapon.fireSound, transform.position);
 
         if (CurrentWeapon.cameraShakeIntensity > 0f)
-            CameraShake.Instance?.Shake(CurrentWeapon.cameraShakeIntensity);
+        {
+            CameraShake.Instance.Shake(CurrentWeapon.cameraShakeIntensity);
+        }
+            
 
         if (animator != null)
             animator.SetTrigger(fireTrigger);

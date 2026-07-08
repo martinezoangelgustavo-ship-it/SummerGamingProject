@@ -46,7 +46,7 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.75
   m_HasExitTime: 0
-  m_HasFixedDuration: 1
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -162,7 +162,7 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: isDead
     m_Type: 4
@@ -284,13 +284,13 @@ AnimatorStateMachine:
     m_Position: {x: 590, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4970951057763109265}
-    m_Position: {x: 200, y: -10, z: 0}
+    m_Position: {x: 40, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6498495793981535092}
-    m_Position: {x: 120, y: -110, z: 0}
+    m_Position: {x: 170, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8181765500389167295}
-    m_Position: {x: 640, y: -110, z: 0}
+    m_Position: {x: 710, y: -210, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 8030690328726029012}
@@ -299,7 +299,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 400, y: -110, z: 0}
+  m_AnyStatePosition: {x: 430, y: -200, z: 0}
   m_EntryPosition: {x: 140, y: 100, z: 0}
   m_ExitPosition: {x: 600, y: 100, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -469,7 +469,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Toss Grenade
-  m_Speed: 1
+  m_Speed: 4
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []

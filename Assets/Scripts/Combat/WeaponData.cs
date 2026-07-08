@@ -9,6 +9,8 @@ public class WeaponData : ScriptableObject
     public GameObject weaponModel;
 
     [Header("Firing")]
+    public int bulletQuantity = 1;
+    public int MultipleBulletSpread = 1;
     public float damage = 10f;
     public float fireRate = 5f;
     [Range(0f, 15f)] public float spread = 1f;

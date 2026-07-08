@@ -100,7 +100,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.4
-  m_Speed: 6
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 240
@@ -193,7 +193,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootTable:
   - pickupPrefab: {fileID: 1419824209681924, guid: f84b4f6ffbef65446a634ad144f6ccce, type: 3}
-    dropChance: 1
+    dropChance: 0.5
+  - pickupPrefab: {fileID: 1419824209681924, guid: f84b4f6ffbef65446a634ad144f6ccce, type: 3}
+    dropChance: 0.5
   dropForce: 3
   dropUpForce: 5
 --- !u!114 &5593447643350083074
@@ -272,6 +274,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 08c9a56251b93e244a2bd2ebd720602a, type: 2}
+    - target: {fileID: 137264362978539666, guid: aaeac629990458b42a7547dcd2591a6d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dba14744e3c81f48854e7774a21ac8d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
