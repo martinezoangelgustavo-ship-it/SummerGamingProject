@@ -80,7 +80,6 @@ public class WeaponController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Collectible") currentAmmo += 10;
-        Debug.Log("Picked Collectible");
         Destroy(other.gameObject);
 
     }
