@@ -21,7 +21,7 @@ MonoBehaviour:
   attackCooldown: 1.5
   stoppingDistance: 1.5
   attackWindup: 0.3
-  lootDropChance: 0.2
+  lootDropChance: 1
   scoreValue: 10
   explodesOnDeath: 0
   explosionRadius: 3

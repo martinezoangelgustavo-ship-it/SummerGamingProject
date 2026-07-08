@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 63f410c072ce2794eab170389a338cb2
+guid: 642d7e1d09bfe064da92912fe291e59c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Zombie Scratch Idle
+      name: Pistol Idle
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 141
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

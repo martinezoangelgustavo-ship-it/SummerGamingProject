@@ -19,13 +19,13 @@ MonoBehaviour:
   fireRate: 5
   spread: 1
   range: 50
-  isAutomatic: 0
+  isAutomatic: 1
   projectileSpeed: 40
   projectileLifetime: 2
   projectilePrefab: {fileID: 1887718299034201942, guid: 24180c9107227ac4db3f08b216fd3bb3, type: 3}
   muzzleFlashPrefab: {fileID: 0}
   impactEffectPrefab: {fileID: 0}
-  magazineSize: 12
+  magazineSize: 15
   reloadTime: 1.5
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}

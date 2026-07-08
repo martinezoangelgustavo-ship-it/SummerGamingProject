@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 26a632aaa11a4144e8028a3652727e4e
+guid: 5e3c2d3076ec41943963135f5ac3ef5c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Run
+      name: Pistol Run
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

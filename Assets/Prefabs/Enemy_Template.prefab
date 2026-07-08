@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77c0a6c800c21c458191c1aeb9ba4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthComponent
-  maxHealth: 1
+  maxHealth: 20
   destroyOnDeath: 0
   destroyDelay: 0
   invulnerabilityDuration: 0
@@ -190,7 +190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fe1016777b0aa4c808299ec1cdfbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootDrop
-  lootTable: []
+  lootTable:
+  - pickupPrefab: {fileID: 1272480267893180, guid: a8a6d470c8e34dd42a5173b0683e51f0, type: 3}
+    dropChance: 1
+  - pickupPrefab: {fileID: 1272480267893180, guid: a8a6d470c8e34dd42a5173b0683e51f0, type: 3}
+    dropChance: 1
   dropForce: 3
   dropUpForce: 5
 --- !u!1001 &6018210799656355881
