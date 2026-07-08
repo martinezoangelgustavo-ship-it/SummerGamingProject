@@ -206,7 +206,7 @@ public class EnemyAI : MonoBehaviour
                 damageable?.TakeDamage(data.explosionDamage, transform.position, (hit.transform.position - transform.position).normalized);
 
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
-                rb?.AddExplosionForce(data.explosionDamage, transform.position, data.explosionRadius, 1f, ForceMode.Impulse);
+                //rb?.AddExplosionForce(data.explosionDamage, transform.position, data.explosionRadius, 1f, ForceMode.Impulse);
             }
         }
 

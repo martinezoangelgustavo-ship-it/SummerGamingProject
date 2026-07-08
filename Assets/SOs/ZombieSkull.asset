@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 326512662b9ef6f49a48cbe0e6dc0092, type: 3}
-  m_Name: Zombie1
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Zombie
-  maxHealth: 40
-  moveSpeed: 3.5
-  damage: 10
+  m_Name: ZombieSkull
+  m_EditorClassIdentifier: 
+  enemyName: Skull
+  maxHealth: 50
+  moveSpeed: 0
+  damage: 5
   detectionRange: 20
   attackRange: 2
   attackCooldown: 1.5
   stoppingDistance: 1.5
   attackWindup: 0.3
-  lootDropChance: 1
+  lootDropChance: 0.2
   scoreValue: 10
-  explodesOnDeath: 0
+  explodesOnDeath: 1
   explosionRadius: 3
   explosionDamage: 25
-  deathEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 2354289082430733585, guid: aafebb7949f618b4a9bfea8862342011, type: 3}
   idleSounds: []
   attackSounds: []
   deathSounds: []
