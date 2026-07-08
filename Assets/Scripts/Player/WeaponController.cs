@@ -55,7 +55,7 @@ public class WeaponController : MonoBehaviour
         fireTimer -= Time.deltaTime;
 
         HandleFiring();
-        HandleReload();
+        //HandleReload();
         HandleWeaponSwitch();
     }
 
@@ -79,7 +79,7 @@ public class WeaponController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Collectible") currentAmmo += 10;
+        if (other.tag == "Collectible");
         Destroy(other.gameObject);
 
     }
@@ -143,13 +143,13 @@ public class WeaponController : MonoBehaviour
         OnFired?.Invoke();
     }
 
-    void HandleReload()
+    /*void HandleReload()
     {
         if (input.ReloadPressed && !isReloading && currentAmmo < CurrentWeapon.magazineSize)
          StartCoroutine(ReloadRoutine());
-    }
+    }*/
 
-    IEnumerator ReloadRoutine()
+   IEnumerator ReloadRoutine()
     {
         isReloading = true;
         OnReloadStart?.Invoke();

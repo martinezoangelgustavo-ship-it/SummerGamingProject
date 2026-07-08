@@ -30,6 +30,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
   emptyClickSound: {fileID: 0}
-  cameraShakeIntensity: 0.3
+  cameraShakeIntensity: 1.801
   movementPenalty: 0.6
   knockbackForce: 5

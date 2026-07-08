@@ -86,7 +86,8 @@ public class HealthComponent : MonoBehaviour, IDamageable
     {
         isDead = true;
         OnDeath?.Invoke();
-
+        Debug.Log("ASAKJDAHSLDKJHAS");
+        Debug.Log(gameObject.name);
         if (destroyOnDeath)
             Destroy(gameObject, destroyDelay);
     }

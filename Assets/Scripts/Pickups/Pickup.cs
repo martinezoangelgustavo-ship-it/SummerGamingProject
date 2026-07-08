@@ -57,7 +57,7 @@ public class Pickup : MonoBehaviour
                 WeaponController wc = other.GetComponent<WeaponController>();
                 if (wc != null)
                 {
-                    wc.EquipWeapon(0);
+                    //wc.EquipWeapon(0);
                     used = true;
                 }
                 break;

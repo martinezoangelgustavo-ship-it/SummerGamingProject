@@ -15,17 +15,17 @@ MonoBehaviour:
   weaponName: Rifle
   icon: {fileID: 0}
   weaponModel: {fileID: 1900586067242068, guid: ad49a19d2c4adc94b838606a5d459f85, type: 3}
-  damage: 10
+  damage: 40
   fireRate: 5
-  spread: 12
+  spread: 15
   range: 50
   isAutomatic: 1
   projectileSpeed: 40
   projectileLifetime: 2
   projectilePrefab: {fileID: 1551417492572840, guid: 79ea69f034f719f408ef7420f8bfb7d8, type: 3}
-  muzzleFlashPrefab: {fileID: 0}
+  muzzleFlashPrefab: {fileID: 2650536103832499751, guid: 15d249bcb2089ce4a812f72a63dc8968, type: 3}
   impactEffectPrefab: {fileID: 0}
-  magazineSize: 30
+  magazineSize: 6000
   reloadTime: 1.5
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
