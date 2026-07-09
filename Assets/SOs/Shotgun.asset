@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5ef84427eb4364684688303402b6ba, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  weaponName: Shotgun
+  icon: {fileID: 0}
+  weaponModel: {fileID: 1105646471333690, guid: a2458a3a2318bb64ea864a87f6558170, type: 3}
+  bulletQuantity: 5
+  MultipleBulletSpread: 5
+  damage: 60
+  fireRate: 1
+  spread: 15
+  range: 20
+  isAutomatic: 0
+  projectileSpeed: 40
+  projectileLifetime: 0.25
+  projectilePrefab: {fileID: 1887718299034201942, guid: 24180c9107227ac4db3f08b216fd3bb3, type: 3}
+  muzzleFlashPrefab: {fileID: 2650536103832499751, guid: 15d249bcb2089ce4a812f72a63dc8968, type: 3}
+  impactEffectPrefab: {fileID: 0}
+  magazineSize: 12
+  reloadTime: 1.5
+  fireSound: {fileID: 8300000, guid: b355f3e842bf2c845b2d7ba74af73fd4, type: 3}
+  reloadSound: {fileID: 0}
+  emptyClickSound: {fileID: 0}
+  cameraShakeIntensity: 0.27
+  movementPenalty: 0.6
+  knockbackForce: 10

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AbilityController : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class AbilityController : MonoBehaviour
     [Header("References")]
     [SerializeField] InputReader input;
     [SerializeField] PlayerController playerController;
+
+    [Header("Events")]
+    public UnityEvent<int,int> OnGrenadeThrow;
+    public UnityEvent<int, int> OnGrenadePickUp;
+
 
     float grenadeCooldownTimer;
     float meleeCooldownTimer;
@@ -82,6 +88,8 @@ public class AbilityController : MonoBehaviour
 
         if (animator != null)
             animator.SetTrigger(grenadeTrigger);
+
+        OnGrenadeThrow?.Invoke(currentGrenades,maxGrenades);
     }
 
     void MeleeAttack()
@@ -128,6 +136,7 @@ public class AbilityController : MonoBehaviour
     public void AddGrenades(int amount)
     {
         currentGrenades = Mathf.Min(currentGrenades + amount, maxGrenades);
+        OnGrenadeThrow?.Invoke(currentGrenades, maxGrenades);
     }
 
     void OnDrawGizmosSelected()

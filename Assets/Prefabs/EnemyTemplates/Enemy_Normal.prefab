@@ -127,6 +127,7 @@ MonoBehaviour:
   maxHealth: 40
   destroyOnDeath: 0
   destroyDelay: 0
+  _animator: {fileID: 5969450837090789475}
   invulnerabilityDuration: 0
   OnHealthChanged:
     m_PersistentCalls:
@@ -149,10 +150,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 978e1b0cdbba71242881126a638f4e4e, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: UpdateScore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -187,6 +188,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
+  capsuleCollider: {fileID: 0}
 --- !u!114 &3941046777786337243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,10 +218,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootDrop
   lootTable:
-  - pickupPrefab: {fileID: 1272480267893180, guid: a8a6d470c8e34dd42a5173b0683e51f0, type: 3}
-    dropChance: 0.2
   - pickupPrefab: {fileID: 1419824209681924, guid: f84b4f6ffbef65446a634ad144f6ccce, type: 3}
-    dropChance: 0.2
+    dropChance: 0.05
+  - pickupPrefab: {fileID: 1272480267893180, guid: a8a6d470c8e34dd42a5173b0683e51f0, type: 3}
+    dropChance: 0.01
+  - pickupPrefab: {fileID: 1535576407082564, guid: 5a211d06a452c5e4ea217af9cc86eee2, type: 3}
+    dropChance: 0.01
+  - pickupPrefab: {fileID: 1259867841671588, guid: f645c825618524d41aea9431a73baaaf, type: 3}
+    dropChance: 0.09
+  - pickupPrefab: {fileID: 1696536619954866, guid: a8ff2ab0da5d89946a15d19f8d064322, type: 3}
+    dropChance: 0.09
+  - pickupPrefab: {fileID: 1587005783624898, guid: 16c8fef45bef9094b9de7c8dbf6ce6c0, type: 3}
+    dropChance: 0.09
+  - pickupPrefab: {fileID: 1106965194759800, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+    dropChance: 0.02
   dropForce: 3
   dropUpForce: 5
 --- !u!114 &414966314003113766

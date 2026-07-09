@@ -43,11 +43,23 @@ public class WeaponController : MonoBehaviour
     public int MagazineSize => CurrentWeapon != null ? CurrentWeapon.magazineSize : 0;
     public bool IsFiring { get; private set; }
     public bool IsReloading => isReloading;
+    public int bulletQuantity => CurrentWeapon != null ? CurrentWeapon.bulletQuantity : 1;
+    public int MultipleBulletSpread => CurrentWeapon != null ? CurrentWeapon.MultipleBulletSpread : 1;
+
+    private int[] weaponAmmo;
 
     void Start()
     {
         if (availableWeapons == null || availableWeapons.Length == 0) return;
         currentWeaponIndex = Mathf.Clamp(startingWeaponIndex, 0, availableWeapons.Length - 1);
+
+        weaponAmmo = new int[availableWeapons.Length];
+
+        for (int i = 0; i < availableWeapons.Length; i++)
+        {
+            weaponAmmo[i] = availableWeapons[i].magazineSize;
+        }
+
         EquipWeapon(currentWeaponIndex);
     }
 
@@ -74,7 +86,7 @@ public class WeaponController : MonoBehaviour
         {
             if (CurrentWeapon.emptyClickSound != null)
                 AudioManager.Instance?.PlaySFX(CurrentWeapon.emptyClickSound, transform.position);
-            StartCoroutine(ReloadRoutine());
+            //StartCoroutine(ReloadRoutine());
         }
 
         IsFiring = wantsFire && fireTimer > -0.1f && !isReloading;
@@ -82,7 +94,7 @@ public class WeaponController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Collectible");
+        if (other.tag == "Collectible")
         Destroy(other.gameObject);
 
     }
@@ -91,83 +103,111 @@ public class WeaponController : MonoBehaviour
     {
         float interval = 1f / CurrentWeapon.fireRate;
         fireTimer = interval;
-        currentAmmo--;
+
+        weaponAmmo[currentWeaponIndex]--;
+        currentAmmo = weaponAmmo[currentWeaponIndex];
 
         Vector3 direction = muzzlePoint.forward;
 
-        /*if (bulletQuantity > 1)
+        if (bulletQuantity > 1)
         {
-            
-        }*/
+            Quaternion rotation = Quaternion.LookRotation(direction);
 
-        /*if (bulletPool != null)
-        {
-            for (int i = 0; i < bulletObjs.Lenght; i++)
+            GameObject[] bulletObjs = new GameObject[_numBullets];
+
+            if (bulletPool != null)
             {
-                Vector3 spreadRotation = Quaternion.Euler(0f, -(_numBullets * _spreadDegree / 2) + (_spreadDegree * i), 0f) * direction;
-                Quaternion quatRotation = Quaternion.LookRotation(spreadRotation);
+                for (int i = 0; i < bulletObjs.Length; i++)
+                {
+                    Vector3 spreadRotation = Quaternion.Euler(0f, -(_numBullets * _spreadDegree / 2) + (_spreadDegree * i), 0f) * direction;
+                    Quaternion quatRotation = Quaternion.LookRotation(spreadRotation);
 
-                bulletObjs[i] = bulletPool.Get(muzzlePoint.position, quatRotation);
+                    bulletObjs[i] = bulletPool.Get(muzzlePoint.position, quatRotation);
+                }
+            }
+
+
+            if (bulletObjs[0] == null && CurrentWeapon.projectilePrefab != null)
+            {
+                for (int i = 0; i < bulletObjs.Length; i++)
+                {
+                    //Vector3 rotation2 = Quaternion.Euler(0f, (3 *_numBullets * _spreadDegree / 2) + (_spreadDegree * i), 0f) * direction;
+                    //Quaternion quatRotation = Quaternion.LookRotation(rotation2);
+                    bulletObjs[i] = Instantiate(CurrentWeapon.projectilePrefab, muzzlePoint.position, rotation);
+                }
+            }
+
+            foreach (GameObject obj in bulletObjs)
+            {
+                Bullet bullet = obj.GetComponent<Bullet>();
+                if (bullet != null)
+                    bullet.Initialize(
+                        CurrentWeapon.damage,
+                        CurrentWeapon.projectileSpeed,
+                        CurrentWeapon.projectileLifetime,
+                        CurrentWeapon.knockbackForce,
+                        bulletPool,
+                        CurrentWeapon.impactEffectPrefab
+                    );
             }
         }
-
-        if*/
-
-        if (CurrentWeapon.spread > 0f)
+        else
         {
-            float spreadAngle = CurrentWeapon.spread * 0.5f;
-            direction = Quaternion.Euler(
-                Random.Range(-spreadAngle, spreadAngle),
-                Random.Range(-spreadAngle, spreadAngle),
-                0f
-            ) * direction;
+            if (CurrentWeapon.spread > 0f)
+            {
+                float spreadAngle = CurrentWeapon.spread * 0.5f;
+                direction = Quaternion.Euler(
+                    Random.Range(-spreadAngle, spreadAngle),
+                    Random.Range(-spreadAngle, spreadAngle),
+                    0f
+                ) * direction;
+            }
+
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            GameObject bulletObj = null;
+
+            if (bulletPool != null)
+                bulletObj = bulletPool.Get(muzzlePoint.position, rotation);
+
+            if (bulletObj == null && CurrentWeapon.projectilePrefab != null)
+                bulletObj = Instantiate(CurrentWeapon.projectilePrefab, muzzlePoint.position, rotation);
+
+            if (bulletObj != null)
+            {
+                Bullet bullet = bulletObj.GetComponent<Bullet>();
+                if (bullet != null)
+                    bullet.Initialize(
+                        CurrentWeapon.damage,
+                        CurrentWeapon.projectileSpeed,
+                        CurrentWeapon.projectileLifetime,
+                        CurrentWeapon.knockbackForce,
+                        bulletPool,
+                        CurrentWeapon.impactEffectPrefab
+                    );
+            }
+
+            if (CurrentWeapon.muzzleFlashPrefab != null)
+            {
+                GameObject flash = Instantiate(CurrentWeapon.muzzleFlashPrefab, muzzlePoint.position, muzzlePoint.rotation, muzzlePoint);
+                Destroy(flash, 1f);
+            }
+
+            if (CurrentWeapon.fireSound != null)
+                AudioManager.Instance?.PlaySFX(CurrentWeapon.fireSound, transform.position);
+
+            if (CurrentWeapon.cameraShakeIntensity > 0f)
+            {
+                CameraShake.Instance.Shake(CurrentWeapon.cameraShakeIntensity);
+            }
+
+
+            if (animator != null)
+                animator.SetTrigger(fireTrigger);
+
+            OnAmmoChanged?.Invoke(currentAmmo, CurrentWeapon.magazineSize);
+            OnFired?.Invoke();
         }
-
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        GameObject bulletObj = null;
-
-        if (bulletPool != null)
-            bulletObj = bulletPool.Get(muzzlePoint.position, rotation);
-
-        if (bulletObj == null && CurrentWeapon.projectilePrefab != null)
-            bulletObj = Instantiate(CurrentWeapon.projectilePrefab, muzzlePoint.position, rotation);
-
-        if (bulletObj != null)
-        {
-            Bullet bullet = bulletObj.GetComponent<Bullet>();
-            if (bullet != null)
-                bullet.Initialize(
-                    CurrentWeapon.damage,
-                    CurrentWeapon.projectileSpeed,
-                    CurrentWeapon.projectileLifetime,
-                    CurrentWeapon.knockbackForce,
-                    bulletPool,
-                    CurrentWeapon.impactEffectPrefab
-                );
-        }
-
-        if (CurrentWeapon.muzzleFlashPrefab != null)
-        {
-            GameObject flash = Instantiate(CurrentWeapon.muzzleFlashPrefab, muzzlePoint.position, muzzlePoint.rotation, muzzlePoint);
-            Destroy(flash, 1f);
-        }
-
-        if (CurrentWeapon.fireSound != null)
-            AudioManager.Instance?.PlaySFX(CurrentWeapon.fireSound, transform.position);
-
-        if (CurrentWeapon.cameraShakeIntensity > 0f)
-        {
-            CameraShake.Instance.Shake(CurrentWeapon.cameraShakeIntensity);
-        }
-            
-
-        if (animator != null)
-            animator.SetTrigger(fireTrigger);
-
-        OnAmmoChanged?.Invoke(currentAmmo, CurrentWeapon.magazineSize);
-        OnFired?.Invoke();
     }
-
     /*void HandleReload()
     {
         if (input.ReloadPressed && !isReloading && currentAmmo < CurrentWeapon.magazineSize)
@@ -188,11 +228,27 @@ public class WeaponController : MonoBehaviour
         yield return new WaitForSeconds(CurrentWeapon.reloadTime);
 
         currentAmmo = CurrentWeapon.magazineSize;
+        weaponAmmo[currentWeaponIndex] = currentAmmo;
         isReloading = false;
         OnReloadEnd?.Invoke();
         OnAmmoChanged?.Invoke(currentAmmo, CurrentWeapon.magazineSize);
     }
 
+    public bool AddAmmo(int amount)
+    {
+        if (currentAmmo >= CurrentWeapon.magazineSize)
+            return false;
+
+        weaponAmmo[currentWeaponIndex] = Mathf.Min(
+            weaponAmmo[currentWeaponIndex] + amount,
+            CurrentWeapon.magazineSize
+        );
+
+        currentAmmo = weaponAmmo[currentWeaponIndex];
+        OnAmmoChanged?.Invoke(currentAmmo, CurrentWeapon.magazineSize);
+
+        return true;
+    }
     void HandleWeaponSwitch()
     {
         if (isReloading) return;
@@ -217,7 +273,7 @@ public class WeaponController : MonoBehaviour
     {
         if (index < 0 || index >= availableWeapons.Length) return;
         currentWeaponIndex = index;
-        currentAmmo = CurrentWeapon.magazineSize;
+        currentAmmo = weaponAmmo[index];
         fireTimer = 0f;
         isReloading = false;
 
@@ -226,6 +282,7 @@ public class WeaponController : MonoBehaviour
 
         OnWeaponChanged?.Invoke(CurrentWeapon);
         OnAmmoChanged?.Invoke(currentAmmo, CurrentWeapon.magazineSize);
+
     }
 
     public void AddWeapon(WeaponData weapon)
