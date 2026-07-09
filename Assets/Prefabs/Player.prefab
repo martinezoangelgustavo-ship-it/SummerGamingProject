@@ -232,6 +232,7 @@ MonoBehaviour:
   availableWeapons:
   - {fileID: 11400000, guid: b2d75098469230542967ed4bad2a3a78, type: 2}
   - {fileID: 11400000, guid: c7e31a25118721f459b79175301d388f, type: 2}
+  - {fileID: 11400000, guid: 8e3af720d3b7f1d4b8092a904071882f, type: 2}
   startingWeaponIndex: 1
   muzzlePoint: {fileID: 2849792639484125259}
   bulletPool: {fileID: 0}
@@ -280,6 +281,8 @@ MonoBehaviour:
   OnReloadEnd:
     m_PersistentCalls:
       m_Calls: []
+  _numBullets: 5
+  _spreadDegree: 10
 --- !u!54 &1341748483857029255
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -33,11 +33,15 @@ public class EnemyAI : MonoBehaviour
     public State CurrentState => currentState;
     public EnemyData Data => data;
 
+    [SerializeField] CapsuleCollider capsuleCollider;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         if (health == null) health = GetComponent<HealthComponent>();
         if (hitFlash == null) hitFlash = GetComponent<HitFlash>();
+
+        if (capsuleCollider == null) capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     void OnEnable()
@@ -184,6 +188,10 @@ public class EnemyAI : MonoBehaviour
     void OnDeath()
     {
         currentState = State.Dead;
+
+        /*if (capsuleCollider != null)
+            capsuleCollider.enabled = false;*/
+
         agent.isStopped = true;
         agent.enabled = false;
 

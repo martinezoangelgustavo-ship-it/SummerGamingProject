@@ -216,10 +216,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootDrop
   lootTable:
-  - pickupPrefab: {fileID: 1272480267893180, guid: a8a6d470c8e34dd42a5173b0683e51f0, type: 3}
-    dropChance: 0.2
   - pickupPrefab: {fileID: 1419824209681924, guid: f84b4f6ffbef65446a634ad144f6ccce, type: 3}
-    dropChance: 0.2
+    dropChance: 0.05
+  - pickupPrefab: {fileID: 1272480267893180, guid: a8a6d470c8e34dd42a5173b0683e51f0, type: 3}
+    dropChance: 0.01
+  - pickupPrefab: {fileID: 1535576407082564, guid: 5a211d06a452c5e4ea217af9cc86eee2, type: 3}
+    dropChance: 0.01
+  - pickupPrefab: {fileID: 1259867841671588, guid: f645c825618524d41aea9431a73baaaf, type: 3}
+    dropChance: 0.09
+  - pickupPrefab: {fileID: 1696536619954866, guid: a8ff2ab0da5d89946a15d19f8d064322, type: 3}
+    dropChance: 0.09
+  - pickupPrefab: {fileID: 1587005783624898, guid: 16c8fef45bef9094b9de7c8dbf6ce6c0, type: 3}
+    dropChance: 0.09
   dropForce: 3
   dropUpForce: 5
 --- !u!114 &414966314003113766

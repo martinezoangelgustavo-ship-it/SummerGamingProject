@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 64727921590618428}
   - component: {fileID: 4015790603946929575}
   m_Layer: 0
-  m_Name: SM_Prop_Ammo_Chosen
+  m_Name: SM_Prop_RiffleAmmoFull_Chosen
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
