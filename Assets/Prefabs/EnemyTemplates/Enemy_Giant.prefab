@@ -127,6 +127,7 @@ MonoBehaviour:
   maxHealth: 500
   destroyOnDeath: 0
   destroyDelay: 0
+  _animator: {fileID: 4027140947764801025}
   invulnerabilityDuration: 0
   OnHealthChanged:
     m_PersistentCalls:
@@ -187,6 +188,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
+  capsuleCollider: {fileID: 0}
 --- !u!114 &3941046777786337243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +230,8 @@ MonoBehaviour:
     dropChance: 0
   - pickupPrefab: {fileID: 1587005783624898, guid: 16c8fef45bef9094b9de7c8dbf6ce6c0, type: 3}
     dropChance: 0
+  - pickupPrefab: {fileID: 1106965194759800, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+    dropChance: 0.8
   dropForce: 3
   dropUpForce: 5
 --- !u!114 &414966314003113766

@@ -565,10 +565,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3067789379697512586, guid: 6ce027cc79f67c24680dcb7b37506877, type: 3}
-      propertyPath: initialSize
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 8391229397017780200, guid: 6ce027cc79f67c24680dcb7b37506877, type: 3}
       propertyPath: m_Name
       value: BulletPool
@@ -802,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873be5175662c604980c546330c24eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultIntensity: 1
+  defaultIntensity: 0.05
 --- !u!114 &330585550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8457,6 +8453,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ae2217a477cf5343b66f24f59537792, type: 3}
+--- !u!1001 &920905984
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1106965194759800, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_Name
+      value: SM_Wep_GrenadeChosenAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.574
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449139803626252, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44b07f83503086f4b8ac48801728d616, type: 3}
 --- !u!1001 &922883953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8691,6 +8744,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 991956436829192589, guid: 5c1b4660279f11d45b8e02d9f509a748, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1993166503}
     - target: {fileID: 3008996408486415284, guid: 5c1b4660279f11d45b8e02d9f509a748, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.827356
@@ -8737,7 +8794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3116657540721728646, guid: 5c1b4660279f11d45b8e02d9f509a748, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13217,6 +13274,7 @@ GameObject:
   - component: {fileID: 1455361240}
   - component: {fileID: 1455361239}
   - component: {fileID: 1455361238}
+  - component: {fileID: 1455361242}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -13330,6 +13388,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1455361242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455361237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  SignalCombinationMode: 0
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1495115769
 GameObject:
   m_ObjectHideFlags: 0
@@ -13930,11 +14012,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc44ce6fae55ac94ab1227a17ee1a52f, type: 3}
---- !u!1 &1644426761 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6091871871614085352, guid: 3f3f0485dd1342142a6bbce31a7d387d, type: 3}
-  m_PrefabInstance: {fileID: 1993166501}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1649965249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17602,7 +17679,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3759845103018527833, guid: 3f3f0485dd1342142a6bbce31a7d387d, type: 3}
   m_PrefabInstance: {fileID: 1993166501}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644426761}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 978e1b0cdbba71242881126a638f4e4e, type: 3}
@@ -17782,22 +17859,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1951146419871461529, guid: 79f781c431b19e241a663cb30875a981, type: 3}
+      propertyPath: OnGrenadeThrow.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1993166503}
+    - target: {fileID: 1951146419871461529, guid: 79f781c431b19e241a663cb30875a981, type: 3}
+      propertyPath: OnGrenadePickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1993166503}
     - target: {fileID: 2497807579047211126, guid: 79f781c431b19e241a663cb30875a981, type: 3}
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 978000072}
-    - target: {fileID: 2497807579047211126, guid: 79f781c431b19e241a663cb30875a981, type: 3}
-      propertyPath: OnFired.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497807579047211126, guid: 79f781c431b19e241a663cb30875a981, type: 3}
-      propertyPath: OnFired.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1644426761}
-    - target: {fileID: 2497807579047211126, guid: 79f781c431b19e241a663cb30875a981, type: 3}
-      propertyPath: OnFired.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2497807579047211126, guid: 79f781c431b19e241a663cb30875a981, type: 3}
       propertyPath: OnAmmoChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17807,7 +17880,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1993166503}
     - target: {fileID: 4366270324574252013, guid: 79f781c431b19e241a663cb30875a981, type: 3}
-      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: OnDamaged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 330585549}
     - target: {fileID: 4366270324574252013, guid: 79f781c431b19e241a663cb30875a981, type: 3}
@@ -17855,3 +17928,4 @@ SceneRoots:
   - {fileID: 866615174}
   - {fileID: 1113089773}
   - {fileID: 1933967958}
+  - {fileID: 920905984}

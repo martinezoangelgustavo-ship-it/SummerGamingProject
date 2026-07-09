@@ -29,9 +29,9 @@ MonoBehaviour:
   impactEffectPrefab: {fileID: 0}
   magazineSize: 12
   reloadTime: 1.5
-  fireSound: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: b355f3e842bf2c845b2d7ba74af73fd4, type: 3}
   reloadSound: {fileID: 0}
   emptyClickSound: {fileID: 0}
-  cameraShakeIntensity: 0.3
+  cameraShakeIntensity: 0.27
   movementPenalty: 0.6
-  knockbackForce: 5
+  knockbackForce: 10

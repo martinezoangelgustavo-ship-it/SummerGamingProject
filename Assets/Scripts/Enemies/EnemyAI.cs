@@ -218,6 +218,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
+
         GameManager.Instance?.AddScore(data.scoreValue);
         WaveSpawner spawner = FindAnyObjectByType<WaveSpawner>();
         spawner?.OnEnemyDied();
